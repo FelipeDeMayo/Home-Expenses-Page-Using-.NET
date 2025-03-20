@@ -1,0 +1,14 @@
+# Backend
+bin/
+obj/
+.vs/
+*.user
+*.cache
+Properties/launchSettings.json
+
+# Frontend
+node_modules/
+dist/
+*.log
+*.lock
+.eslintcache
