@@ -90,7 +90,13 @@ export const Button = styled.button`
   &:hover:not(:disabled) {
     background-color: #0056b3;
   }
+  text-shadow: 
+    -1px -1px 0 #000,  
+     1px -1px 0 #000,
+    -1px  1px 0 #000,
+     1px  1px 0 #000;
 `;
+
 
 export const ErrorMessage = styled.p`
   color: red;

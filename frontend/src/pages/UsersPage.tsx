@@ -45,17 +45,23 @@ function UsersPage() {
       <Title>Criar Usuário</Title>
       <FormContainer>
         <Input
+          id="name"
+          name="name"
           value={name}
           onChange={e => setName(e.target.value)}
           onKeyDown={handleKeyDown}
           placeholder="Nome"
+          autoComplete="name"
         />
         <Input
+          id="age"
+          name="age"
           value={age}
           onChange={e => setAge(e.target.value)}
           onKeyDown={handleKeyDown} 
           placeholder="Idade"
           type="number"
+          autoComplete="off"
         />
         <CreateButton onClick={handleCreateUser}>Criar</CreateButton>
       </FormContainer>

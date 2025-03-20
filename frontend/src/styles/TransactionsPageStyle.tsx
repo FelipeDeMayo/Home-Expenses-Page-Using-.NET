@@ -71,14 +71,17 @@ export const Transaction = styled.span<TransactionProps>`
   font-size: 1.2rem;
   margin-bottom: 5px;
   font-weight: bold;
-  color: ${(props) => 
-    props.type === "receita" ? "#00FF00" : 
-    props.type === "despesa" ? "#ff0000" : 
+  color: ${(props) =>
+    props.type === "receita" ? "#00FF00" :
+    props.type === "despesa" ? "#ff0000" :
     props.type === "saldo" ? "#007bff" :
     "#000000"};
+  text-shadow: 
+    -1px -1px 0 #000,  
+     1px -1px 0 #000,
+    -1px  1px 0 #000,
+     1px  1px 0 #000;
 `;
-
-
 
 export const Summary = styled.p`
   font-size: 1.2rem;

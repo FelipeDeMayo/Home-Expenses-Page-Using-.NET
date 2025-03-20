@@ -90,7 +90,10 @@ export const Button = styled.button`
   border-radius: 5px;
   cursor: pointer;
   transition: 0.3s;
-
+  text-shadow: -1px -1px 0 #000, 
+                1px -1px 0 #000, 
+               -1px  1px 0 #000, 
+                1px  1px 0 #000;
   &:hover {
     background: #cc0000;
   }

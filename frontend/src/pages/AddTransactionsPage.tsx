@@ -85,8 +85,10 @@ function AddTransactionPage() {
       {error && <ErrorMessage>{error}</ErrorMessage>}
 
       <FormGroup>
-        <Label>Usuário:</Label>
+        <Label htmlFor="user">Usuário:</Label>
         <Select
+          id="user"
+          name="user"
           value={selectedUserId === -1 ? "" : selectedUserId}
           onChange={(e) => setSelectedUserId(e.target.value ? +e.target.value : -1)}
         >
@@ -100,8 +102,10 @@ function AddTransactionPage() {
       </FormGroup>
 
       <FormGroup>
-        <Label>Descrição:</Label>
+        <Label htmlFor="description">Descrição:</Label>
         <Input
+          id="description"
+          name="description"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
           placeholder="Ex: Salário, Conta de Luz"
@@ -114,9 +118,11 @@ function AddTransactionPage() {
       </FormGroup>
 
       <FormGroup>
-        <Label>Valor (R$):</Label>
+        <Label htmlFor="value">Valor (R$):</Label>
         <Input
-          type="text"  
+          id="value"
+          name="value"
+          type="text"
           value={value}
           onChange={(e) => setValue(e.target.value)}
           placeholder="Ex: 100,00"
@@ -129,8 +135,10 @@ function AddTransactionPage() {
       </FormGroup>
 
       <FormGroup>
-        <Label>Tipo:</Label>
+        <Label htmlFor="type">Tipo:</Label>
         <Select
+          id="type"
+          name="type"
           value={type}
           onChange={(e) => setType(e.target.value as "despesa" | "receita")}
           disabled={selectedUserId === -1 || (users.find((u) => u.id === selectedUserId)?.age || 0) < 18}
