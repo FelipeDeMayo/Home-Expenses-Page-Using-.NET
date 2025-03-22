@@ -1,1 +1,30 @@
-[]
+[
+  {
+    "Id": 1,
+    "Description": "Pirulito",
+    "Value": 15,
+    "Type": "despesa",
+    "UserId": 3
+  },
+  {
+    "Id": 2,
+    "Description": "Salada",
+    "Value": 12,
+    "Type": "despesa",
+    "UserId": 3
+  },
+  {
+    "Id": 3,
+    "Description": "Conselho",
+    "Value": 120,
+    "Type": "receita",
+    "UserId": 4
+  },
+  {
+    "Id": 4,
+    "Description": "SELERIO",
+    "Value": 1500,
+    "Type": "receita",
+    "UserId": 2
+  }
+]

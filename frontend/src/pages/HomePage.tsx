@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import chartImage from "../assets/images/chart.jpg"; 
+import expensesImage from "../assets/images/expenses.png"; 
 import { Container, Title, NavList, ChartImage, NavListItem } from "../styles/HomePageStyle";
 import { useEffect } from "react"; 
 
@@ -33,8 +33,7 @@ function HomePage() {
   return (
     <Container>
       <Title>Controle de Gastos Residenciais</Title>
-
-      <ChartImage src={chartImage} alt="Gráfico de Controle de Gastos" />
+      <ChartImage src={expensesImage} alt="Gráfico de Controle de Gastos" />
 
       <nav>
         <NavList>

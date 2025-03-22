@@ -49,20 +49,18 @@ export const ChartImage = styled.img`
   max-width: 100%;
   width: ${px2vw(300)}; 
   height: auto;
-  border-radius: ${px2vw(20)};
   margin-top: ${px2vw(30)};
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 
   @media (max-width: 1024px) {
-    width: ${px2vw(250, 1024)};
+    width: ${px2vw(350, 1024)};
   }
 
   @media (max-width: 768px) {
-    width: ${px2vw(350, 768)};
+    width: ${px2vw(450, 768)};
   }
 
   @media (max-width: 480px) {
-    width: ${px2vw(200, 480)};
+    width: ${px2vw(350, 480)};
   }
 `;
 
@@ -73,7 +71,7 @@ export const NavList = styled.ul`
   display: flex;
   flex-direction: row;
   gap: ${px2vw(15)};
-  margin-top: ${px2vw(70)};
+  margin-top: ${px2vw(40)};
   justify-content: center;
   width: 100%;
   max-width: ${px2vw(400)};
@@ -81,7 +79,18 @@ export const NavList = styled.ul`
   @media (max-width: 1024px) {
     flex-direction: column;
     align-items: center;
-    gap: ${px2vw(10, 1024)};
+    gap: ${px2vw(20, 1024)};
+    margin-top: ${px2vw(30)};
+  }
+
+  @media (max-width: 768px) {
+    gap: ${px2vw(25, 768)};  
+    margin-top: ${px2vw(20)};  
+  }
+
+  @media (max-width: 480px) {
+    gap: ${px2vw(30, 480)}; 
+    margin-top: ${px2vw(15)};  
   }
 `;
 
@@ -117,18 +126,18 @@ export const NavListItem = styled.li`
   @media (max-width: 768px) {
     a {
       width: 90%;
-      font-size: clamp(0.85rem, ${px2vw(12)}, 1rem);
-      padding: 6px 14px; 
-      max-height: 25px;  
+      font-size: 1rem;
+      padding: 8px 16px;
+      max-height: 45px;  
     }
   }
 
   @media (max-width: 480px) {
     a {
       width: 95%;
-      font-size: clamp(0.8rem, ${px2vw(10)}, 0.9rem);
-      padding: 4px 12px; 
-      max-height: 20px;  
+      font-size: 1rem; 
+      padding: 6px 14px;
+      max-height: 40px; 
     }
   }
 `;
