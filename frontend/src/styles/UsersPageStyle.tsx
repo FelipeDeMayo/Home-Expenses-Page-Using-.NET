@@ -8,8 +8,15 @@ export const Container = styled.div`
   border-radius: 8px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   text-align: center;
-`;
+  @media (max-width: 768px) {
+    max-width: 500px; 
+  }
 
+  @media (max-width: 480px) {
+    max-width: 90%; 
+    padding: 15px;
+  }
+`;
 export const Title = styled.h1`
   font-size: 2rem;
   color: #000000;
@@ -49,7 +56,11 @@ export const FormContainer = styled.div`
   justify-content: center; 
   gap: 10px; 
   margin-top: 15px;
-  width: 100%; 
+  width: 100%;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 export const Input = styled.input`

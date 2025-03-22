@@ -30,6 +30,7 @@ export const List = styled.ul`
   display: flex;
   flex-wrap: wrap;
   gap: 15px;  
+  justify-content: center;
 `;
 
 export const ListItem = styled.li`

@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
-import { getUsers, createUser, deleteUser } from "../services/userService";
+import { getUsers } from "../services/userService";
+import { createNewUser, deleteExistingUser } from "../utils/userUtils";
+import Navbar from "../components/Navbar";
 import { Container, Title, UserList, UserItem, Button, Input, CreateButton, FormContainer } from "../styles/UsersPageStyle";
 
 function UsersPage() {
@@ -11,16 +13,14 @@ function UsersPage() {
     getUsers().then(setUsers);
   }, []);
 
-  const handleCreateUser = async () => {
-    const newUser = await createUser(name, parseInt(age));
-    setUsers([...users, newUser]);
+  const handleCreateUser = () => {
+    createNewUser(name, parseInt(age), users, setUsers);
     setName("");
     setAge("");
   };
 
-  const handleDeleteUser = async (id: number) => {
-    await deleteUser(id);
-    setUsers(users.filter(user => user.id !== id));
+  const handleDeleteUser = (id: number) => {
+    deleteExistingUser(id, users, setUsers);
   };
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
@@ -30,42 +30,46 @@ function UsersPage() {
   };
 
   return (
-    <Container>
-      <Title>Lista de Usuários</Title>
+    <div>
+      <Navbar />
 
-      <UserList>
-        {users.map(user => (
-          <UserItem key={user.id}>
-            <span>{user.name} - {user.age} anos</span>
-            <Button onClick={() => handleDeleteUser(user.id)}>Excluir</Button>
-          </UserItem>
-        ))}
-      </UserList>
+      <Container>
+        <Title>Lista de Usuários</Title>
 
-      <Title>Criar Usuário</Title>
-      <FormContainer>
-        <Input
-          id="name"
-          name="name"
-          value={name}
-          onChange={e => setName(e.target.value)}
-          onKeyDown={handleKeyDown}
-          placeholder="Nome"
-          autoComplete="name"
-        />
-        <Input
-          id="age"
-          name="age"
-          value={age}
-          onChange={e => setAge(e.target.value)}
-          onKeyDown={handleKeyDown} 
-          placeholder="Idade"
-          type="number"
-          autoComplete="off"
-        />
-        <CreateButton onClick={handleCreateUser}>Criar</CreateButton>
-      </FormContainer>
-    </Container> 
+        <UserList>
+          {users.map(user => (
+            <UserItem key={user.id}>
+              <span>{user.name} - {user.age} anos</span>
+              <Button onClick={() => handleDeleteUser(user.id)}>Excluir</Button>
+            </UserItem>
+          ))}
+        </UserList>
+
+        <Title>Criar Usuário</Title>
+        <FormContainer>
+          <Input
+            id="name"
+            name="name"
+            value={name}
+            onChange={e => setName(e.target.value)}
+            onKeyDown={handleKeyDown}
+            placeholder="Nome"
+            autoComplete="name"
+          />
+          <Input
+            id="age"
+            name="age"
+            value={age}
+            onChange={e => setAge(e.target.value)}
+            onKeyDown={handleKeyDown} 
+            placeholder="Idade"
+            type="number"
+            autoComplete="off"
+          />
+          <CreateButton onClick={handleCreateUser}>Criar</CreateButton>
+        </FormContainer>
+      </Container> 
+    </div>
   );
 }
 
